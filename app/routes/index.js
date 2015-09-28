@@ -2,7 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.findAll('rental');
+    return { "rentals": this.store.findAll('rental'),
+      "cities": this.store.findAll('city') };
   },
 
   actions: {
